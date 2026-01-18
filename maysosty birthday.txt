@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mays!</title>
+<style>
+body {
+background-color: #E0B0FF; /* mauve background */
+color: #fff;
+font-family: 'Arial', sans-serif;
+text-align: center;
+overflow: hidden;
+}
+h1 {
+font-size: 3em;
+margin-top: 50px;
+}
+p {
+font-size: 1.5em;
+margin: 20px;
+}
+.heart {
+position: absolute;
+width: 20px;
+height: 20px;
+background: red;
+transform: rotate(45deg);
+animation: float 5s linear infinite;
+}
+.heart::after,
+.heart::before {
+content: "";
+position: absolute;
+width: 20px;
+height: 20px;
+background: red;
+border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { top: 0; left: -10px; }
+@keyframes float {
+0% { transform: translateY(0) rotate(45deg); }
+100% { transform: translateY(-700px) rotate(45deg); }
+}
+</style>
+</head>
+<body>
+
+<h1>Happy Birthday, Mays! 💜</h1>
+<p>Even far away, you’re always in my heart 💌<br>
+Hope your day is full of smiles, love, and Taylor Swift vibes 🎶<br>
+Can’t wait to hug you soon 😘<br>
+Love, Amin 💫</p>
+
+<script>
+// Make multiple hearts float
+for(let i=0; i<30; i++){
+let heart = document.createElement('div');
+heart.className = 'heart';
+heart.style.left = Math.random()*window.innerWidth + 'px';
+heart.style.animationDuration = 3 + Math.random()*5 + 's';
+heart.style.backgroundColor = `hsl(${Math.random()*360}, 70%, 60%)`;
+document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
